@@ -17,7 +17,7 @@ on:
   push:
     branches:
       - main
-  paths:
+    paths:
       - 'rg-mtfi-m520/.config'
 #  schedule:
 #    - cron: 0 8 * * 5

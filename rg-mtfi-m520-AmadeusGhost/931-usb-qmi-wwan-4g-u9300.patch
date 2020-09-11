@@ -1,0 +1,28 @@
+ Unknown
+ ---
+ Add LongSung U9300 4G card
+ drivers/net/usb/qmi_wwan.c                |   1 +
+ drivers/usb/serial/option.c               |   2 +
+ 2 files changed, 3 insertions(+)
+
+--- a/drivers/net/usb/qmi_wwan.c	2020-08-26 16:41:08.000000000 +0800
++++ b/drivers/net/usb/qmi_wwan.c	2020-09-05 18:11:04.506128000 +0800
+@@ -1337,6 +1337,7 @@ static const struct usb_device_id produc
+ 	{QMI_FIXED_INTF(0x1c9e, 0x9801, 3)},	/* Telewell TW-3G HSPA+ */
+ 	{QMI_FIXED_INTF(0x1c9e, 0x9803, 4)},	/* Telewell TW-3G HSPA+ */
+ 	{QMI_FIXED_INTF(0x1c9e, 0x9b01, 3)},	/* XS Stick W100-2 from 4G Systems */
++	{QMI_FIXED_INTF(0x1c9e, 0x9b3c, 4)},	/* LongSung U9300 */
+ 	{QMI_FIXED_INTF(0x0b3c, 0xc000, 4)},	/* Olivetti Olicard 100 */
+ 	{QMI_FIXED_INTF(0x0b3c, 0xc001, 4)},	/* Olivetti Olicard 120 */
+ 	{QMI_FIXED_INTF(0x0b3c, 0xc002, 4)},	/* Olivetti Olicard 140 */
+--- a/drivers/usb/serial/option.c	2020-08-26 16:41:08.000000000 +0800
++++ b/drivers/usb/serial/option.c	2020-09-05 18:19:51.490171000 +0800
+@@ -1846,6 +1846,8 @@ static const struct usb_device_id option
+ 	  .driver_info = RSVD(3) },
+ 	{ USB_DEVICE_INTERFACE_CLASS(LONGCHEER_VENDOR_ID, 0x9803, 0xff),
+ 	  .driver_info = RSVD(4) },
++	{ USB_DEVICE_INTERFACE_CLASS(LONGCHEER_VENDOR_ID, 0x9b3c, 0xff),    /* LongSung U9300 */
++	  .driver_info = RSVD(4) },
+ 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, ZOOM_PRODUCT_4597) },
+ 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, IBALL_3_5G_CONNECT) },
+ 	{ USB_DEVICE(HAIER_VENDOR_ID, HAIER_PRODUCT_CE100) },
